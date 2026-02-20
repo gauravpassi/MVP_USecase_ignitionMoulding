@@ -1,0 +1,17 @@
+venv/
+.venv/
+__pycache__/
+.claude/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+*.db
+*.db-shm
+*.db-wal
+storage/images/*
+!storage/images/.gitkeep
+*.onnx
+.DS_Store
+node_modules/
