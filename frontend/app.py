@@ -4,7 +4,16 @@ Streamlit multi-page app entry point.
 Run: streamlit run frontend/app.py
 """
 import os
+import sys
 import streamlit as st
+
+# Ensure the repo root AND frontend dir are on the path so imports work
+# both locally (run from repo root) and on Streamlit Cloud
+_repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_frontend_dir = os.path.dirname(os.path.abspath(__file__))
+for _p in [_repo_root, _frontend_dir]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
 
 st.set_page_config(
     page_title="Visual Inspection MVP",
@@ -34,20 +43,20 @@ st.session_state["api_url"] = API_URL
 
 # ---------- render selected page ----------
 if selection == "Upload & Inspect":
-    from frontend.pages import upload_inspect
+    from pages import upload_inspect
     upload_inspect.render()
 elif selection == "Dashboard":
-    from frontend.pages import dashboard
+    from pages import dashboard
     dashboard.render()
 elif selection == "Cameras":
-    from frontend.pages import cameras
+    from pages import cameras
     cameras.render()
 elif selection == "Inspect":
-    from frontend.pages import inspect
+    from pages import inspect
     inspect.render()
 elif selection == "Reviews":
-    from frontend.pages import reviews
+    from pages import reviews
     reviews.render()
 elif selection == "Dataset Capture":
-    from frontend.pages import dataset
+    from pages import dataset
     dataset.render()

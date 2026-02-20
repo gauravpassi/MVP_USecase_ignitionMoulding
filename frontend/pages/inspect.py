@@ -5,7 +5,7 @@ import base64
 import time
 
 import streamlit as st
-from frontend.api_client import get, post
+from api_client import get, post
 
 
 def render():

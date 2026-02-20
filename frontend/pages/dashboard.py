@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import streamlit as st
-from frontend.api_client import get
+from api_client import get
 
 
 def render():

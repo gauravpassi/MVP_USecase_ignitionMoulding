@@ -4,7 +4,7 @@ from __future__ import annotations
 import base64
 
 import streamlit as st
-from frontend.api_client import get, patch
+from api_client import get, patch
 
 
 def render():
