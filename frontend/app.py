@@ -28,7 +28,7 @@ selection = st.sidebar.radio("Navigate", list(PAGES.keys()))
 
 # ---------- API base URL ----------
 # Read from env var (set on Streamlit Cloud), fallback to sidebar input for local dev
-_default_api_url = os.environ.get("API_URL", "http://localhost:8000")
+_default_api_url = os.environ.get("API_URL", "https://mvpusecaseignitionmoulding-production.up.railway.app")
 API_URL = st.sidebar.text_input("API URL", value=_default_api_url)
 st.session_state["api_url"] = API_URL
 
